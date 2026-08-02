@@ -170,6 +170,30 @@ h2.section-label{font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;
     border-left:4px solid var(--accent-line);border-right:0}
 }
 
+/* ---------- philosophy: project on the left, writing on the right ---------- */
+.split{display:grid;grid-template-columns:minmax(0,37%) minmax(0,1fr);
+  gap:2.6rem;align-items:start}
+.aside{position:sticky;top:1.4rem;display:flex;flex-direction:column;gap:1.2rem}
+.embed{position:relative;aspect-ratio:3/4;border:1px solid var(--line);
+  border-radius:var(--radius);overflow:hidden;background:var(--card);
+  box-shadow:var(--shadow-sm)}
+.embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0;
+  display:block}
+.aside .cap{font-size:.84rem;line-height:1.5;color:var(--text-soft);margin:0}
+.aside .cap b{color:var(--text);font-weight:700}
+.openbtn{display:inline-block;align-self:start;padding:.55rem 1rem;
+  border:1px solid var(--accent-line);border-radius:999px;text-decoration:none;
+  font-size:.86rem;font-weight:600;color:var(--accent);
+  transition:background .15s ease}
+.openbtn:hover,.openbtn:focus-visible{background:var(--accent-soft)}
+/* the writing fills its column rather than sitting in a narrow measure */
+.split .prose{max-width:none;margin:0}
+@media (max-width:1000px){
+  .split{grid-template-columns:1fr;gap:2rem}
+  .aside{position:static}
+  .embed{aspect-ratio:4/3}
+}
+
 /* ---------- reading page ---------- */
 .page-head{padding-bottom:1.4rem;border-bottom:1px solid var(--line);margin-bottom:2rem}
 .back{display:inline-block;font-size:.9rem;color:var(--accent);text-decoration:none;
