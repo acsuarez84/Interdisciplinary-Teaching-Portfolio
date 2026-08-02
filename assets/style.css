@@ -6,9 +6,9 @@
      lighter than the page rather than as heavy dark blocks. Navy and bronze
      carry over from the assignment document. The bronze is darkened for link
      text: A6752A as written reaches only 4.04:1 on white, under the AA floor. */
-  --bg:#f0f0ef; --text:#1f2a44; --text-soft:#5a6478; --line:#dcdcda;
-  --card:#ffffff; --card-text:#1f2a44; --card-soft:#5a6478;
-  --accent:#8c6224; --accent-line:#a6752a; --accent-soft:#f5f3ef;
+  --bg:#f7f7f6; --text:#1f2a44; --text-soft:#5a6478; --line:#d8d8d5;
+  --card:#e9e9e7; --card-text:#1f2a44; --card-soft:#4f586b;
+  --accent:#855c21; --accent-line:#a6752a; --accent-soft:#efeeea;
   --focus:#1a73e8; --radius:16px; --maxw:900px;
   --shadow:0 2px 6px rgba(0,0,0,.14),0 14px 40px rgba(0,0,0,.10);
   --shadow-sm:0 1px 3px rgba(0,0,0,.16);
