@@ -171,8 +171,8 @@ h2.section-label{font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;
 }
 
 /* ---------- philosophy: project on the left, writing on the right ---------- */
-.split{display:grid;grid-template-columns:minmax(0,37%) minmax(0,1fr);
-  gap:2.6rem;align-items:start}
+.split{display:grid;grid-template-columns:minmax(0,35%) minmax(0,1fr);
+  gap:4rem;align-items:start}
 .aside{position:sticky;top:1.4rem;display:flex;flex-direction:column;gap:1.2rem}
 .embed{position:relative;aspect-ratio:3/4;border:1px solid var(--line);
   border-radius:var(--radius);overflow:hidden;background:var(--card);
@@ -188,6 +188,12 @@ h2.section-label{font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;
 .openbtn:hover,.openbtn:focus-visible{background:var(--accent-soft)}
 /* the writing fills its column rather than sitting in a narrow measure */
 .split .prose{max-width:none;margin:0}
+/* The pull quotes pull outward by -5rem, which was right when the text ran the
+   full width and had page margin to bleed into. Inside a column there is no
+   outer margin, so the negative pull lands on top of the project frame. Keep
+   them floating, drop the overhang. */
+.split .pull{margin:.35rem 0 1.1rem 1.8rem}
+.split .pull.left{margin:.35rem 1.8rem 1.1rem 0}
 @media (max-width:1000px){
   .split{grid-template-columns:1fr;gap:2rem}
   .aside{position:static}
