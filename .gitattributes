@@ -1,0 +1,5 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Word documents are zip archives -- never line-ending normalize them
+*.docx binary

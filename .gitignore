@@ -1,0 +1,11 @@
+.DS_Store
+~$*.docx
+
+# private working notes — never publish
+3-Shared/Instructor Notes.docx
+Instructor Notes*.docx
+
+# community college pathway — not published yet
+2-Valencia-HUM2937/
+*-Valencia.docx
+HUM2937*
