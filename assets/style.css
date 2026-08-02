@@ -106,8 +106,9 @@ h2.section-label{font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;
   border-color:var(--accent);color:var(--accent)}
 
 /* ---------- figure: the statement read as data ---------- */
-.figure{margin:0 0 2.4rem;padding:1.4rem 1.4rem 1.1rem;background:var(--card);
+.figure{margin:0 -2.5rem 2.4rem;padding:1.6rem 1.8rem 1.2rem;background:var(--card);
   border:1px solid var(--line);border-radius:var(--radius)}
+@media (max-width:900px){.figure{margin-left:0;margin-right:0}}
 .figstream{display:block;width:100%;height:auto}
 .figstream path{stroke:var(--card);stroke-width:1.25;transition:opacity .15s ease}
 .figstream:hover path{opacity:.45}
@@ -160,7 +161,7 @@ h2.section-label{font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;
 .back{display:inline-block;font-size:.9rem;color:var(--accent);text-decoration:none;
   margin-bottom:1.2rem;font-weight:600}
 .back:hover{text-decoration:underline}
-.prose{max-width:66ch}
+.prose{max-width:78ch}
 .prose h2{font-family:var(--font-serif);font-size:1.34rem;margin:2.4rem 0 .7rem}
 .prose p{margin:0 0 1.15rem}
 .prose ul{margin:0 0 1.15rem 1.2rem;padding:0}
