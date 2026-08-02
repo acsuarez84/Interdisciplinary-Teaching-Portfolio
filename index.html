@@ -6,12 +6,19 @@
 <title>Angely Suarez DeJesus — Teaching Portfolio</title>
 <meta name="description" content="Teaching portfolio: teaching philosophy and two versions of Intersectional Machines, a feminist digital humanities approach to AI.">
 <link rel="stylesheet" href="assets/style.css">
+<script>(function(){try{var t=localStorage.getItem("theme");
+if(t){document.documentElement.setAttribute("data-theme",t);}}catch(e){}})();</script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%236b2d5c'/%3E%3Ctext x='50' y='68' font-size='54' text-anchor='middle' fill='%23fff' font-family='Georgia,serif'%3EIM%3C/text%3E%3C/svg%3E">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <div class="wrap">
-
+<div class="topbar topbar-end"><button class="themebtn" type="button" data-theme-toggle
+        aria-label="Switch between light and dark">
+  <span aria-hidden="true" class="t-dark">◑</span>
+  <span aria-hidden="true" class="t-light">◐</span>
+  <span class="t-label">Theme</span>
+</button></div>
 <header class="masthead">
       <div class="portrait">
         <span class="initials" aria-hidden="true">AS</span>
@@ -69,5 +76,18 @@ shaping their lives.</p>
 </main>
 <footer>Angely Suarez DeJesus · Text &amp; Technology PhD Student, University of Central Florida</footer>
 </div>
+<script>
+document.querySelectorAll("[data-theme-toggle]").forEach(function(btn){
+  btn.addEventListener("click", function(){
+    var root = document.documentElement;
+    var dark = root.getAttribute("data-theme") === "dark" ||
+      (!root.getAttribute("data-theme") &&
+       matchMedia("(prefers-color-scheme: dark)").matches);
+    var next = dark ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("theme", next); } catch (e) {}
+  });
+});
+</script>
 </body>
 </html>

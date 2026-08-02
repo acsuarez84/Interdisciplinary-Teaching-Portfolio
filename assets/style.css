@@ -1,25 +1,29 @@
 :root{
   --font-sans:"Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;
   --font-serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
-  --bg:#ffffff; --text:#111111; --text-soft:#4a4a4a; --line:#e3e3e6;
-  --card:#141414; --card-text:#ffffff; --card-soft:#cfcfcf;
-  --accent:#6b2d5c; --accent-soft:#f3e9f0;
+  /* palette taken from the assignment document: deep navy 1F2A44, pale
+     blue-grey F5F7FB, bronze accent. The bronze is darkened for link text in
+     light mode -- A6752A only reaches 4.04:1 on white, under the AA floor. */
+  --bg:#ffffff; --text:#1f2a44; --text-soft:#5a6478; --line:#dde3ee;
+  --card:#1f2a44; --card-text:#ffffff; --card-soft:#c3cbdb;
+  --accent:#8c6224; --accent-line:#a6752a; --accent-soft:#f5f7fb;
   --focus:#1a73e8; --radius:16px; --maxw:900px;
   --shadow:0 2px 6px rgba(0,0,0,.14),0 14px 40px rgba(0,0,0,.10);
   --shadow-sm:0 1px 3px rgba(0,0,0,.16);
 }
 :root[data-theme="dark"]{
-  --bg:#0e0e11; --text:#f4f4f5; --text-soft:#b6b6ba; --line:#2a2a31;
-  --card:#ffffff; --card-text:#111111; --card-soft:#565660;
-  --accent:#e8b7d8; --accent-soft:#241723;
+  --bg:#141b2b; --text:#eef1f7; --text-soft:#a9b2c4; --line:#2b3448;
+  --card:#f5f7fb; --card-text:#1f2a44; --card-soft:#5a6478;
+  --accent:#c08a3e; --accent-line:#c08a3e; --accent-soft:#1c2437;
   --focus:#7db1ff;
   --shadow:0 2px 6px rgba(0,0,0,.5),0 16px 44px rgba(0,0,0,.45);
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
-    --bg:#0e0e11; --text:#f4f4f5; --text-soft:#b6b6ba; --line:#2a2a31;
-    --card:#ffffff; --card-text:#111111; --card-soft:#565660;
-    --accent:#e8b7d8; --accent-soft:#241723; --focus:#7db1ff;
+    --bg:#141b2b; --text:#eef1f7; --text-soft:#a9b2c4; --line:#2b3448;
+    --card:#f5f7fb; --card-text:#1f2a44; --card-soft:#5a6478;
+    --accent:#c08a3e; --accent-line:#c08a3e; --accent-soft:#1c2437;
+    --focus:#7db1ff;
     --shadow:0 2px 6px rgba(0,0,0,.5),0 16px 44px rgba(0,0,0,.45);
   }
 }
@@ -70,8 +74,26 @@ h2.section-label{font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;
 .card .go{display:inline-block;margin-top:.9rem;font-size:.88rem;font-weight:600;
   color:var(--card-text);border-bottom:1px solid currentColor;padding-bottom:1px}
 
-/* ---------- home button, on every page but the home page ---------- */
-.homebtn{display:inline-block;margin-bottom:1.6rem;padding:.5rem 1rem;
+/* ---------- top bar: home button + theme toggle ---------- */
+.topbar{display:flex;align-items:center;gap:.6rem;margin-bottom:1.6rem}
+.topbar-end{justify-content:flex-end}
+.themebtn{margin-left:auto;display:inline-flex;align-items:center;gap:.45rem;
+  padding:.5rem .9rem;border:1px solid var(--line);border-radius:999px;
+  background:transparent;color:var(--text);font:inherit;font-size:.86rem;
+  font-weight:600;cursor:pointer;
+  transition:background .15s ease,border-color .15s ease,color .15s ease}
+.themebtn:hover,.themebtn:focus-visible{background:var(--accent-soft);
+  border-color:var(--accent-line);color:var(--accent)}
+.themebtn .t-light{display:none}
+:root[data-theme="dark"] .themebtn .t-dark{display:none}
+:root[data-theme="dark"] .themebtn .t-light{display:inline}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .themebtn .t-dark{display:none}
+  :root:not([data-theme="light"]) .themebtn .t-light{display:inline}
+}
+
+/* ---------- home button ---------- */
+.homebtn{display:inline-block;padding:.5rem 1rem;
   border:1px solid var(--line);border-radius:999px;text-decoration:none;
   font-size:.88rem;font-weight:600;color:var(--text);
   transition:background .15s ease,border-color .15s ease}
@@ -92,6 +114,7 @@ h2.section-label{font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;
 .prose table{border-collapse:collapse;min-width:100%;font-size:.9rem}
 .prose th,.prose td{border:1px solid var(--line);padding:.55rem .7rem;
   text-align:left;vertical-align:top}
-.prose th{background:var(--accent-soft);font-weight:700}
+.prose th{background:var(--accent-soft);font-weight:700;
+  border-bottom:2px solid var(--accent-line)}
 footer{margin-top:4rem;padding-top:1.6rem;border-top:1px solid var(--line);
   color:var(--text-soft);font-size:.88rem}
