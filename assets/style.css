@@ -105,6 +105,56 @@ h2.section-label{font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;
 .homebtn:hover,.homebtn:focus-visible{background:var(--accent-soft);
   border-color:var(--accent);color:var(--accent)}
 
+/* ---------- figure: the statement read as data ---------- */
+.figure{margin:0 0 2.4rem;padding:1.4rem 1.4rem 1.1rem;background:var(--card);
+  border:1px solid var(--line);border-radius:var(--radius)}
+.figstream{display:block;width:100%;height:auto}
+.figstream path{stroke:var(--card);stroke-width:1.25;transition:opacity .15s ease}
+.figstream:hover path{opacity:.45}
+.figstream path:hover{opacity:1}
+.s-a{fill:#1f2a44}.s-b{fill:#46506b}.s-c{fill:#a6752a}
+.s-d{fill:#6b7488}.s-e{fill:#c9a06a}
+:root[data-theme="dark"] .s-a{fill:#8f9ab8}
+:root[data-theme="dark"] .s-b{fill:#6f7a99}
+:root[data-theme="dark"] .s-c{fill:#d2a054}
+:root[data-theme="dark"] .s-d{fill:#9aa2b4}
+:root[data-theme="dark"] .s-e{fill:#e0bd85}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .s-a{fill:#8f9ab8}
+  :root:not([data-theme="light"]) .s-b{fill:#6f7a99}
+  :root:not([data-theme="light"]) .s-c{fill:#d2a054}
+  :root:not([data-theme="light"]) .s-d{fill:#9aa2b4}
+  :root:not([data-theme="light"]) .s-e{fill:#e0bd85}
+}
+.figtick{stroke:var(--card-soft);stroke-width:1}
+.figtxt{fill:var(--card-soft);font-size:11px;font-family:var(--font-sans)}
+.legend{display:flex;flex-wrap:wrap;gap:.5rem 1.1rem;margin:.6rem 0 .8rem}
+.key{display:inline-flex;align-items:center;gap:.4rem;font-size:.8rem;
+  color:var(--card-soft);letter-spacing:.02em}
+.key i{width:.85rem;height:.85rem;border-radius:3px;display:inline-block}
+/* fill paints SVG; the legend chips are HTML and need background */
+.key i.s-a{background:#1f2a44}.key i.s-b{background:#46506b}
+.key i.s-c{background:#a6752a}.key i.s-d{background:#6b7488}
+.key i.s-e{background:#c9a06a}
+:root[data-theme="dark"] .key i.s-a{background:#8f9ab8}
+:root[data-theme="dark"] .key i.s-b{background:#6f7a99}
+:root[data-theme="dark"] .key i.s-c{background:#d2a054}
+:root[data-theme="dark"] .key i.s-d{background:#9aa2b4}
+:root[data-theme="dark"] .key i.s-e{background:#e0bd85}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .key i.s-a{background:#8f9ab8}
+  :root:not([data-theme="light"]) .key i.s-b{background:#6f7a99}
+  :root:not([data-theme="light"]) .key i.s-c{background:#d2a054}
+  :root:not([data-theme="light"]) .key i.s-d{background:#9aa2b4}
+  :root:not([data-theme="light"]) .key i.s-e{background:#e0bd85}
+}
+.figure figcaption{font-size:.86rem;line-height:1.55;color:var(--card-soft);
+  border-top:1px solid var(--line);padding-top:.8rem;margin:0}
+
+/* ---------- pull quote ---------- */
+.pull{margin:2.2rem 0;padding:0 0 0 1.3rem;border-left:4px solid var(--accent-line);
+  font-family:var(--font-serif);font-size:1.28rem;line-height:1.45;color:var(--text)}
+
 /* ---------- reading page ---------- */
 .page-head{padding-bottom:1.4rem;border-bottom:1px solid var(--line);margin-bottom:2rem}
 .back{display:inline-block;font-size:.9rem;color:var(--accent);text-decoration:none;
