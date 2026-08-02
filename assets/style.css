@@ -1,28 +1,30 @@
 :root{
   --font-sans:"Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;
   --font-serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
-  /* palette taken from the assignment document: deep navy 1F2A44, pale
-     blue-grey F5F7FB, bronze accent. The bronze is darkened for link text in
-     light mode -- A6752A only reaches 4.04:1 on white, under the AA floor. */
-  --bg:#ffffff; --text:#1f2a44; --text-soft:#5a6478; --line:#dde3ee;
-  --card:#1f2a44; --card-text:#ffffff; --card-soft:#c3cbdb;
-  --accent:#8c6224; --accent-line:#a6752a; --accent-soft:#f5f7fb;
+  /* Page tone is sampled from the blurred background of the portrait, which
+     averages #A7AAA9 -- a soft neutral grey, nothing near black. Cards sit
+     lighter than the page rather than as heavy dark blocks. Navy and bronze
+     carry over from the assignment document. The bronze is darkened for link
+     text: A6752A as written reaches only 4.04:1 on white, under the AA floor. */
+  --bg:#f0f0ef; --text:#1f2a44; --text-soft:#5a6478; --line:#dcdcda;
+  --card:#ffffff; --card-text:#1f2a44; --card-soft:#5a6478;
+  --accent:#8c6224; --accent-line:#a6752a; --accent-soft:#f5f3ef;
   --focus:#1a73e8; --radius:16px; --maxw:900px;
   --shadow:0 2px 6px rgba(0,0,0,.14),0 14px 40px rgba(0,0,0,.10);
   --shadow-sm:0 1px 3px rgba(0,0,0,.16);
 }
 :root[data-theme="dark"]{
-  --bg:#141b2b; --text:#eef1f7; --text-soft:#a9b2c4; --line:#2b3448;
-  --card:#f5f7fb; --card-text:#1f2a44; --card-soft:#5a6478;
-  --accent:#c08a3e; --accent-line:#c08a3e; --accent-soft:#1c2437;
+  --bg:#24262a; --text:#efefee; --text-soft:#b0b2b0; --line:#3a3d42;
+  --card:#2e3135; --card-text:#efefee; --card-soft:#b0b2b0;
+  --accent:#d2a054; --accent-line:#c08a3e; --accent-soft:#32353a;
   --focus:#7db1ff;
   --shadow:0 2px 6px rgba(0,0,0,.5),0 16px 44px rgba(0,0,0,.45);
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
-    --bg:#141b2b; --text:#eef1f7; --text-soft:#a9b2c4; --line:#2b3448;
-    --card:#f5f7fb; --card-text:#1f2a44; --card-soft:#5a6478;
-    --accent:#c08a3e; --accent-line:#c08a3e; --accent-soft:#1c2437;
+    --bg:#24262a; --text:#efefee; --text-soft:#b0b2b0; --line:#3a3d42;
+    --card:#2e3135; --card-text:#efefee; --card-soft:#b0b2b0;
+    --accent:#d2a054; --accent-line:#c08a3e; --accent-soft:#32353a;
     --focus:#7db1ff;
     --shadow:0 2px 6px rgba(0,0,0,.5),0 16px 44px rgba(0,0,0,.45);
   }
@@ -30,7 +32,9 @@
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-sans);
   line-height:1.65;-webkit-font-smoothing:antialiased}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:2.5rem 1.25rem 4rem}
+.wrap{padding:2.5rem 2.5in 4rem}
+@media (max-width:1180px){.wrap{padding-left:1.25in;padding-right:1.25in}}
+@media (max-width:760px){.wrap{padding-left:1.25rem;padding-right:1.25rem}}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:6px}
 .skip{position:absolute;left:-9999px}
@@ -64,6 +68,7 @@ h2.section-label{font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;
 .cards{display:grid;gap:1rem;grid-template-columns:1fr;list-style:none;padding:0;margin:0}
 @media(min-width:680px){.cards{grid-template-columns:1fr 1fr}.cards li.wide{grid-column:1/-1}}
 .card{display:block;text-decoration:none;background:var(--card);color:var(--card-text);
+  border:1px solid var(--line);border-left:4px solid var(--accent-line);
   border-radius:var(--radius);padding:1.5rem 1.6rem;height:100%;
   box-shadow:var(--shadow-sm);transition:transform .16s ease,box-shadow .16s ease}
 .card:hover,.card:focus-visible{transform:translateY(-3px);box-shadow:var(--shadow)}
