@@ -152,9 +152,23 @@ h2.section-label{font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;
 .figure figcaption{font-size:.86rem;line-height:1.55;color:var(--card-soft);
   border-top:1px solid var(--line);padding-top:.8rem;margin:0}
 
-/* ---------- pull quote ---------- */
-.pull{margin:2.2rem 0;padding:0 0 0 1.3rem;border-left:4px solid var(--accent-line);
-  font-family:var(--font-serif);font-size:1.28rem;line-height:1.45;color:var(--text)}
+/* ---------- pull quote, set into the margin like a magazine ---------- */
+.pull{float:right;width:min(18rem,44%);margin:.35rem -5rem 1.1rem 2.2rem;
+  padding:.2rem 0 .2rem 1.2rem;border-left:4px solid var(--accent-line);
+  font-family:var(--font-serif);font-size:1.24rem;line-height:1.42;
+  color:var(--text)}
+/* alternate sides down the page */
+.pull.left{float:left;margin:.35rem 2.2rem 1.1rem -5rem;
+  padding:.2rem 1.2rem .2rem 0;text-align:right;
+  border-left:0;border-right:4px solid var(--accent-line)}
+/* headings must clear a floated quote or they ride up beside it */
+.prose h2{clear:both}
+/* below the point where the margin disappears, sit them back in the flow */
+@media (max-width:1000px){
+  .pull,.pull.left{float:none;width:auto;text-align:left;
+    margin:2rem 0;padding:.2rem 0 .2rem 1.2rem;
+    border-left:4px solid var(--accent-line);border-right:0}
+}
 
 /* ---------- reading page ---------- */
 .page-head{padding-bottom:1.4rem;border-bottom:1px solid var(--line);margin-bottom:2rem}
